@@ -5,7 +5,22 @@ import { Field } from "../Field";
 
 import "./index.scss";
 
-export const Form = ({ data }) => {
+
+export interface IFormProps {
+  name?: string;
+  title?: string;
+  textLink?: string;
+  link?: string;
+  buttonText?: string;
+  fields?: [
+    {
+      [key: string]: string;
+    }
+  ];
+}
+
+
+export const Form = (data:IFormProps) => {
   const { name, title, textLink, link, buttonText, fields } = data;
 
   return (

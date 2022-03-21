@@ -1,14 +1,14 @@
 import React from "react";
 
-import "./index.scss";
+import { Text } from "../Text/index";
+import { Label, Input } from "./styled";
 
 export const Field = ({ field }) => {
-  console.log(field);
+  const { name, type = "text", max = "30", min = "2", text, error } = field;
 
-  const { name, type = 'text', max = '30', min = '2', text, error } = field;
   return (
-    <label className="label">
-      <input
+    <Label>
+      <Input
         className="field"
         required="required"
         autofocus="autofocus"
@@ -20,7 +20,17 @@ export const Field = ({ field }) => {
         minlength={min}
         placeholder={text}
       />
-      <span className="error-msg">{error}</span>
-    </label>
+      <Text
+        as="span"
+        color="warning"
+        fontSize="12px"
+        fontWeight="500"
+        lineHeight="1.2"
+        margin="7px 0 0 "
+        display="none"
+      >
+        {error}
+      </Text>
+    </Label>
   );
 };

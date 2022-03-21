@@ -1,20 +1,18 @@
 import React from "react";
 
-import "./index.scss";
+import { Wrapper } from "./styled.ts";
 
 export const Button = ({
   children,
   onClick,
   type,
-  className = "",
   disabled,
 }) => (
-  <button
+  <Wrapper
     type={type}
-    className={`button ${className}`}
     onClick={onClick}
     disabled={disabled}
   >
     {children}
-  </button>
+  </Wrapper>
 );

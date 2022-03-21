@@ -1,7 +1,7 @@
 
 import React from "react";
 
-import "./index.scss";
+import "./styled.ts";
 
 export const EditAvatar = () => (
   <form>

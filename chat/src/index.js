@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { ThemeProvider } from "styled-components";
 
 import "./styles/normalize.css";
-import "./styles/index.scss";
+import { baseTheme } from "./styles/theme.ts";
+import GlobalStyles from "./styles/global.ts";
 
 // import { Form } from "./components/Form";
 import { Main } from "./components/Main";
@@ -10,9 +12,12 @@ import { Main } from "./components/Main";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Form data={DataFormAuth} /> */}
-    {/* <Form data={DataFormLogin} /> */}
-    <Main />
+    <ThemeProvider theme={baseTheme}>
+      {/* <Form data={DataFormAuth} /> */}
+      {/* <Form data={DataFormLogin} /> */}
+      <Main />
+      <GlobalStyles />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

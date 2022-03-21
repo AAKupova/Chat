@@ -1,19 +1,23 @@
-@keyframes rotate {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(3);
-  }
-}
+import styled from "styled-components";
 
-.edit-avatar {
+export const Wrapper = styled.form`
+  @keyframes rotate {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(3);
+    }
+  }
+`;
+
+export const Input = styled.input`
   width: 120px;
   height: 120px;
   border-radius: 100%;
   position: absolute;
   cursor: pointer;
-  
+
   &::-webkit-file-upload-button {
     opacity: 0;
     color: rgba(0, 0, 0, 0.0);
@@ -53,4 +57,4 @@
   &:hover:after {
     opacity: 1;
   }
-}
+`;

@@ -1,11 +1,11 @@
 import React from "react";
 
-import "./index.scss";
+import { Wrapper, Images, IsOnline } from "./styles.ts";
 
 export const Avatar = ({avatar, size}) => (
-  <div className="avatar">
+  <Wrapper>
     {/* <div data-component="editAvatar"></div> */}
-    <img alt="аватар" src={avatar} className={`avatar__img ${size}`} />
-    <span className={`avatar__isOnline ${size}`}></span>
-  </div>
+    <Images size={size} alt="аватар" src={avatar} />
+    <IsOnline size={size}></IsOnline>
+  </Wrapper>
 );

@@ -1,18 +1,28 @@
 import React from "react";
 
 import { Avatar } from "../Avatar";
-import avatar from "../../static/images/default-avatar.svg"
+import { Text } from "../Text";
+import avatar from "../../static/images/avatar-icon.svg";
 
-import "./index.scss";
+import { Content, Wrapper } from "./styles.ts";
 
 export const Header = ({ name, isOnline }) => (
-  <div className="header">
-    <div className="header__centr">
-      <Avatar avatar={avatar}/>
-      <div>
-        <p className="header__name">{name}</p>
-        <p className="header__isOnline">{isOnline}</p>
-      </div>
-    </div>
-  </div>
+  <Wrapper>
+    <Avatar avatar={avatar}/>
+    <Content>
+      <Text as="p" fontSize="12px" fontWeight="700" lineHeight="1.1" color="dark">
+        {name}
+      </Text>
+      <Text
+        as="p"
+        fontWeight="400"
+        fontSize="10px"
+        color="darkGray"
+        lineHeight="1.1"
+        margin="3px 0"
+      >
+        {isOnline}
+      </Text>
+    </Content>
+  </Wrapper>
 );

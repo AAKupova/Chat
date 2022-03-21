@@ -1,4 +1,6 @@
-.button {
+import styled from "styled-components";
+
+export const Wrapper = styled.button`
   background-color: var(--color-dark);
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.15);
   color: var(--color-light);
@@ -14,13 +16,13 @@
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    background: var( --color-accent);
+    background: var(--color-accent);
     cursor: pointer;
   }
 
-  &:disabled{
+  &:disabled {
     background-color: var(--color-disable);
     color: var(--color-dark-gray);
     cursor: default;
   }
-}
+`;
